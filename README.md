@@ -3,6 +3,8 @@ Ethereum web3 library based on reactive observables
 
 Web3-rx is a javascript library that provides a [ReactiveX](http://reactivex.io/) API around Ethereum contracts. As an alternative to web3.js, web3-rx uses [reactive programming](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754) patterns (i.e. observables) to simplify the development of front-end UIs for Ethereum DApps.
 
+NOTE: since the initial implementation, go-ethereum now has experimental support for [debug_storageRangeAt](https://github.com/ethereum/go-ethereum/pull/3407) and [debug_preimage](https://github.com/ethereum/go-ethereum/pull/3543). The functionality provided by `debug_preimage` replaces the need to "pluck" mapping key preimages from transaction traces. Also, the code used for decoding storage objects into solidity variable names was an early version of code that has since been merged into [remix](https://github.com/ethereum/remix/tree/8f6ad3f4d39071edad9412e7a52e509c55a3737d/src/solidity).
+
 ## The web3-rx and ABIrx concept
 
 Web3-rx turns an Ethereum contract's state into an observable stream, which emits an event on every state change (i.e. on every change to the contract's storage variables). Web3-rx takes the address of an ethereum contract, and watches that contract's storage for changes.
