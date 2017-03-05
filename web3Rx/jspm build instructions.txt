@@ -1,0 +1,19 @@
+jspm build main.js - x [outfile] Create an optimized static single-file build
+  --skip-rollup                  Skip Rollup static optimizations
+  --minify --no-mangle --config <build.json>
+  --format <amd|cjs|umd|esm>     Specify a custom output format for the build
+  --format global --global-name <g> --global-deps "{globalModuleMap}"
+
+jspm build ./x.js --format cjs   Statically optimize into a CommonJS build
+
+
+
+
+jspm build ./index.js dist/index.js --externals bluebird --format cjs --skip-source-maps
+
+
+jspm build ./index.js dist/index.js --format cjs --skip-source-maps
+  * doesn't work with angular2/typescript because "module is not defined" (commonjs problem)
+
+jspm build ./index.js dist/index.js --format umd --skip-source-maps
+  * using this one for angular2
